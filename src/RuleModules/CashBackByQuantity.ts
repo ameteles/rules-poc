@@ -1,6 +1,6 @@
-const moment = require("moment");
+import moment from "moment";
 
-function cashBackByQuantity(cart) {
+function cashBackByQuantity(cart: any) {
   // console.log(this);
   // this.stores
   // this.departmentCodes
@@ -25,6 +25,4 @@ function cashBackByQuantity(cart) {
   }
 }
 
-// console.log(cashBackByQuantity);
-
-module.exports = cashBackByQuantity;
+export default cashBackByQuantity;

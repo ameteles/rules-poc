@@ -1,7 +1,7 @@
-const promotions = require("../promotions.json");
-const Enuns = require("./Enuns");
+import promotions from "../promotions.json";
+import Enuns from "./Enuns";
 
-const rules = [];
+const rules: any[] = [];
 
 //trás ordenado do menor para o maior
 const getRules = () => {
@@ -9,7 +9,7 @@ const getRules = () => {
 };
 
 //preenche o array de rules com a função e array de parametros necessários
-const setRules = (priority, rule, params) => {
+const setRules = (priority: number, rule: any, params: any) => {
   rules.push({ priority, rule: rule.bind(params) });
 };
 
@@ -18,4 +18,4 @@ promotions.map((promotion) =>
   setRules(promotion.priority, Enuns[promotion.type], promotion.params)
 );
 
-module.exports = { setRules, getRules };
+export default { setRules, getRules };

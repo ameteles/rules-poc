@@ -1,4 +1,4 @@
-module.exports = () => ({
+export default {
   store: "001",
   pos: "541",
   startDate: {},
@@ -510,4 +510,4 @@ module.exports = () => ({
   channel: null,
   invoiceNumber: "54000038",
   serieNF: "336",
-});
+};

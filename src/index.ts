@@ -1,6 +1,8 @@
-const Rules = require("./src/Rules");
+import Rules from "./Rules";
 
-const cart = require("./src/misc/cart")();
+import cart from "./misc/cart";
+
+// console.log(cart);
 
 const rules = Rules.getRules();
 
