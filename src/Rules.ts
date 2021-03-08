@@ -1,4 +1,5 @@
-import promotions from "../promotions.json";
+import promotions from "./promotions";
+
 import Enuns from "./Enuns";
 
 const rules: any[] = [];
