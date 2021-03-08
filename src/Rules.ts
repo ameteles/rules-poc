@@ -1,22 +1,27 @@
 import promotions from "./promotions";
 
-import Enuns from "./Enuns";
+import Enuns from "./Enuns/PromotionEnum";
+import { RulesInterface } from "./Interfaces/index";
 
-const rules: any[] = [];
+class Rules {
+  private rules: RulesInterface[] = [];
 
-//trás ordenado do menor para o maior
-const getRules = () => {
-  return rules.sort((current, next) => current.priority - next.priority);
-};
+  constructor() {
+    // carrega do objeto json
+    promotions.map((promotion) =>
+      this.setRules(promotion.priority, Enuns[promotion.type], promotion.params)
+    );
+  }
 
-//preenche o array de rules com a função e array de parametros necessários
-const setRules = (priority: number, rule: any, params: any) => {
-  rules.push({ priority, rule: rule.bind(params) });
-};
+  //trás ordenado do menor para o maior
+  public getRules = () => {
+    return this.rules.sort((current, next) => current.priority - next.priority);
+  };
 
-// carrega do objeto json
-promotions.map((promotion) =>
-  setRules(promotion.priority, Enuns[promotion.type], promotion.params)
-);
+  //preenche o array de rules com a função e array de parametros necessários
+  public setRules = (priority: number, rule: Function, params: any) => {
+    this.rules.push({ priority, rule: rule.bind(params) });
+  };
+}
 
-export default { setRules, getRules };
+export default new Rules();

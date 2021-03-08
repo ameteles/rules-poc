@@ -1,4 +1,4 @@
-import cashBackByQuantity from "./RuleModules/CashBackByQuantity";
+import cashBackByQuantity from "../RuleModules/CashBackByQuantity";
 
 const Enuns = {
   CASHBACK_BY_QUANTITY: cashBackByQuantity,

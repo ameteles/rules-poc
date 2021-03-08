@@ -1,6 +1,6 @@
 import Rules from "./Rules";
 
-import cart from "./misc/cart";
+import cart from "./Fake/cart";
 
 // console.log(cart);
 
@@ -10,3 +10,7 @@ const rules = Rules.getRules();
 rules.map(({ rule }) => {
   console.log(rule(cart));
 });
+
+const applyRules = (cart: any) => {
+  return;
+};
