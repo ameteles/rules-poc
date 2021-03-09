@@ -6,7 +6,7 @@
   "scripts": {
     "start:dev": "ts-node-dev --respawn --transpile-only src/index.ts",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "rimraf ./dist/ && tsc && ncc build dist/index.js -o promotions"
+    "build": "rimraf ./dist/ && tsc && ncc build dist/index.js -o promotions -m"
   },
   "author": "",
   "license": "ISC",

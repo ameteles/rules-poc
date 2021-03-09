@@ -430,7 +430,7 @@ export default {
         eanDefault: "7896024796288",
       },
       productByWeight: null,
-      quantity: 1,
+      quantity: 10,
       price: 1.77,
       discount: 0,
       discountArray: [],

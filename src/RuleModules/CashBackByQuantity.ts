@@ -1,6 +1,7 @@
 import moment from "moment";
+import { CartInterface } from "../Interfaces";
 
-function cashBackByQuantity(cart: any) {
+function CashBackByQuantity(cart: CartInterface) {
   // console.log(this);
   // this.stores
   // this.departmentCodes
@@ -16,13 +17,13 @@ function cashBackByQuantity(cart: any) {
   if (now.isBetween(this.startDate, this.endDate)) {
     if (this.stores.includes(cart.store))
       if (!cart.flags.includes("service"))
-        if (cart.products.length >= this.minQuantity) {
-          // then
-
-          cart.discount = this.discountByPercentage;
+        cart.products.map((product) => {
+          if (product.quantity >= this.minQuantity)
+            cart.discount = this.discountByPercentage;
           return cart;
-        }
+        });
+    return cart;
   }
 }
 
-export default cashBackByQuantity;
+export default CashBackByQuantity;

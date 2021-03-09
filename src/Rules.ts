@@ -1,4 +1,4 @@
-import promotions from "./promotions";
+import promotions from "./promotions.json";
 
 import Enuns from "./Enuns/PromotionEnum";
 import { RulesInterface } from "./Interfaces/index";
