@@ -34,3 +34,10 @@ export interface CartInterface {
   charges: number | string;
   [key: string]: any;
 }
+
+export interface PromotionInterface {
+  priority: number;
+  type: string;
+  params: Object;
+  [key: string]: any;
+}

@@ -1,21 +1,11 @@
-import promotions from "./promotions.json";
-
-import Enuns from "./Enuns/PromotionEnum";
 import { RulesInterface } from "./Interfaces/index";
 
-class Rules {
+class RuleService {
   private rules: RulesInterface[] = [];
-
-  constructor() {
-    // carrega do objeto json
-    promotions.map((promotion) =>
-      this.setRules(promotion.priority, Enuns[promotion.type], promotion.params)
-    );
-  }
 
   //trás ordenado do menor para o maior
   public getRules = () => {
-    return this.rules.sort((current, next) => current.priority - next.priority);
+    return this.rules;
   };
 
   //preenche o array de rules com a função e array de parametros necessários
@@ -24,4 +14,4 @@ class Rules {
   };
 }
 
-export default new Rules();
+export default RuleService;
