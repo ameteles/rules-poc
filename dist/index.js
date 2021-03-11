@@ -14,6 +14,7 @@ const applyPromotions = (cart) => {
 };
 exports.applyPromotions = applyPromotions;
 const loadPromotions = (promotions) => {
+    ruleService.resetRules();
     promotions.map((promotion) => ruleService.setRules(promotion.priority, PromotionEnum_1.default[promotion.type], promotion.params));
 };
 exports.loadPromotions = loadPromotions;

@@ -7,6 +7,7 @@ class RuleService {
         this.getRules = () => {
             return this.rules;
         };
+        this.resetRules = () => (this.rules.length = 0);
         this.setRules = (priority, rule, params) => {
             this.rules.push({ priority, rule: rule.bind(params) });
         };

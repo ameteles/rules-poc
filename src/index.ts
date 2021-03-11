@@ -13,6 +13,7 @@ const applyPromotions = (cart: CartInterface) => {
 
 // carrega as regras apartir de determinado parametros que seguem a interface
 const loadPromotions = (promotions: PromotionInterface[]) => {
+  ruleService.resetRules();
   promotions.map((promotion) =>
     ruleService.setRules(
       promotion.priority,
