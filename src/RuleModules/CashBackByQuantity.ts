@@ -27,3 +27,4 @@ function CashBackByQuantity(cart: CartInterface) {
 }
 
 export default CashBackByQuantity;
+export { CashBackByQuantity };

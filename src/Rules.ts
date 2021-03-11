@@ -15,3 +15,4 @@ class RuleService {
 }
 
 export default RuleService;
+export { RuleService };

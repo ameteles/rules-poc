@@ -62,3 +62,4 @@ function DiscountPercentageByAmePay(cart: CartInterface) {
 }
 
 export default DiscountPercentageByAmePay;
+export { DiscountPercentageByAmePay };
