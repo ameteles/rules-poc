@@ -2,6 +2,7 @@ import RuleService from "./Rules";
 import { CartInterface, PromotionInterface } from "./Interfaces";
 import Enuns from "./Enuns/PromotionEnum";
 import promotions from "./promotions.json";
+import barCodeReadCart from "./Fake/AmePayment/BarCodeReadCart";
 const ruleService = new RuleService();
 
 //escolhe a melhor promoção para o determinado carrinho example
@@ -24,7 +25,9 @@ const loadPromotions = (promotions: PromotionInterface[]) => {
 };
 
 //remover caso use como package
-// loadRules(promotions);
+// loadPromotions(promotions);
+
+// console.log(applyPromotions(barCodeReadCart));
 
 export default applyPromotions;
 

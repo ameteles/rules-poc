@@ -9,7 +9,8 @@ function DiscountPercentageByAmePay(cart) {
     if (moment_1.default.utc().isBetween(new Date(this.startDate), new Date(this.endDate))) {
         if (this.stores.includes(cart.store))
             if (!cart.flags.includes("service") &&
-                cart.selectedPayments.includes("AME_DIGITAL"))
+                (cart.selectedPayments.includes("AME_DIGITAL") ||
+                    cart.selectedPayments.find((element) => (element === null || element === void 0 ? void 0 : element.name) == "AME_DIGITAL")))
                 cart.products.map((product) => {
                     if (this.productEans.includes(product.product.ean)) {
                         const discount = Number((product.price *

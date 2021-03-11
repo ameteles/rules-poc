@@ -22,7 +22,10 @@ function DiscountPercentageByAmePay(cart: CartInterface) {
     if (this.stores.includes(cart.store))
       if (
         !cart.flags.includes("service") && //  verifica se não é um serviço e se no meio de pagamento contem AME_DIGITAL
-        cart.selectedPayments.includes("AME_DIGITAL")
+        (cart.selectedPayments.includes("AME_DIGITAL") ||
+          cart.selectedPayments.find(
+            (element: any) => element?.name == "AME_DIGITAL"
+          ))
       )
         cart.products.map((product) => {
           // verifica os eans dos produtos que são passivos da promoção
