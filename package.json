@@ -1,6 +1,6 @@
 {
   "name": "rules-poc-1",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "prova de conceito de rules para motor de promoções",
   "main": "dist/index.js",
   "scripts": {
