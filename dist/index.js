@@ -10,7 +10,10 @@ const ruleService = new Rules_1.default();
 const applyPromotions = (cart) => {
     const carts = [];
     ruleService.getRules().map(({ rule }) => carts.push(rule(cart)));
-    return carts.sort((first, next) => first.total - next.total)[0];
+    if (carts.length == 0) {
+        return cart;
+    }
+    return carts.sort((first, next) => next.total - first.total)[0];
 };
 exports.applyPromotions = applyPromotions;
 const loadPromotions = (promotions) => {
