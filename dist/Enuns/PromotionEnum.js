@@ -10,3 +10,4 @@ const Enuns = {
     DISCOUNT_PERCENTAGE_BY_AME_PAY: DiscountPercentageByAmePay_1.default,
 };
 exports.default = Enuns;
+//# sourceMappingURL=PromotionEnum.js.map

@@ -34,3 +34,4 @@ function DiscountPercentageByAmePay(cart) {
 }
 exports.DiscountPercentageByAmePay = DiscountPercentageByAmePay;
 exports.default = DiscountPercentageByAmePay;
+//# sourceMappingURL=DiscountPercentageByAmePay.js.map
