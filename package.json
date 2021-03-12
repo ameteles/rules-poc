@@ -7,12 +7,14 @@
     "start:dev": "ts-node-dev --respawn --transpile-only src/index.ts",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rimraf ./dist/ && tsc",
-    "build:minimal": "npm run build && ncc build dist/index.js -o promotions -m"
+    "build:minimal": "npm run build && ncc build dist/index.js -o promotions -m",
+    "dev": "ts-node-dev --inspect=0.0.0.0:7001 --exit-child --respawn src/index.ts"
   },
   "author": "ameteles",
   "license": "ISC",
   "dependencies": {
-    "moment": "^2.29.1"
+    "moment": "^2.29.1",
+    "yarn": "^1.22.10"
   },
   "devDependencies": {
     "@types/moment": "^2.13.0",
