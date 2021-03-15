@@ -1,4 +1,4 @@
-import { RulesInterface } from "./Interfaces/IRules";
+import { RulesInterface } from "../Interfaces/IRules";
 
 class RuleService {
   private rules: RulesInterface[] = [];
