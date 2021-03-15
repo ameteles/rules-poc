@@ -1,5 +1,5 @@
 import moment from "moment";
-import { CartInterface } from "../Interfaces";
+import { CartInterface } from "../../Interfaces/IRules";
 
 /* 
   this.stores
@@ -64,5 +64,5 @@ function DiscountPercentageByAmePay(cart: CartInterface) {
   }
 }
 
-export default DiscountPercentageByAmePay;
+// export default DiscountPercentageByAmePay;
 export { DiscountPercentageByAmePay };

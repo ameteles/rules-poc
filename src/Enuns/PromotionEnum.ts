@@ -1,9 +1,9 @@
-import cashBackByQuantity from "../RuleModules/CashBackByQuantity";
-import discountPercentageByAmePay from "../RuleModules/DiscountPercentageByAmePay";
+import { CashBackByRateQuantity } from "../UseCases/CashBackByRateQuantity";
+import { DiscountPercentageByAmePay } from "../UseCases/DiscountPergentageByAmePay";
 
 const Enuns = {
-  CASHBACK_BY_QUANTITY: cashBackByQuantity,
-  DISCOUNT_PERCENTAGE_BY_AME_PAY: discountPercentageByAmePay,
+  CASHBACK_BY_QUANTITY: CashBackByRateQuantity,
+  DISCOUNT_PERCENTAGE_BY_AME_PAY: DiscountPercentageByAmePay,
 };
 
 export default Enuns;

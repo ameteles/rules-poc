@@ -1,7 +1,7 @@
 import moment from "moment";
-import { CartInterface } from "../Interfaces";
+import { CartInterface } from "../../Interfaces/IRules";
 
-function CashBackByQuantity(cart: CartInterface) {
+function CashBackByRateQuantity(cart: CartInterface) {
   // console.log(this);
   // this.stores
   // this.departmentCodes
@@ -26,5 +26,4 @@ function CashBackByQuantity(cart: CartInterface) {
   }
 }
 
-export default CashBackByQuantity;
-export { CashBackByQuantity };
+export { CashBackByRateQuantity };

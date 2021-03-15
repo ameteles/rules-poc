@@ -1,6 +1,6 @@
 {
   "name": "rules-poc",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "prova de conceito de rules para motor de promoções",
   "main": "dist/index.js",
   "scripts": {
@@ -13,8 +13,7 @@
   "author": "ameteles",
   "license": "ISC",
   "dependencies": {
-    "moment": "^2.29.1",
-    "yarn": "^1.22.10"
+    "moment": "^2.29.1"
   },
   "devDependencies": {
     "@types/moment": "^2.13.0",
