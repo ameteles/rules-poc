@@ -1,11 +1,6 @@
 export type PaymentTypes = "AME_DIGITAL" | "PIX";
 export type DiscountType = "VALUE" | "CASHBACK";
 
-export interface RulesInterface {
-  priority: number;
-  rule: (cart: CartInterface) => CartInterface;
-}
-
 export interface DiscoutArrayInterface {
   message: string;
   value: number;
@@ -52,3 +47,14 @@ export interface PromotionInterface {
   params: Object;
   [key: string]: any;
 }
+
+export interface ClassRuleInterface {
+  execute(cart: CartInterface): CartInterface;
+}
+
+export interface RulesInterface {
+  priority: number;
+  rule: ClassRuleInterface;
+}
+
+// export interface Class<T = ClassRuleInterface> = new (...args: any[]) => T;
