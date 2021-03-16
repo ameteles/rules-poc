@@ -1,28 +1,33 @@
 import moment from "moment";
-import { CartInterface } from "../../Interfaces/IRules";
+import { CartInterface, ClassRuleInterface } from "../../Interfaces/IRules";
 
-function CashBackByRateQuantity(cart: CartInterface) {
-  // console.log(this);
-  // this.stores
-  // this.departmentCodes
-  // this.productEans
-  // this.externalCodes
-  // this.startDate
-  // this.endDate
-  // this.minQuantity
-  // this.discountByPercentage
+class CashBackByRateQuantity implements ClassRuleInterface {
+  private stores: string[];
+  private departmentCodes: string[];
+  private productEans: string[];
+  private externalCodes: string[];
+  private startDate: string;
+  private endDate: string;
+  private minQuantity: number;
+  private discountByPercentage: number;
+
+  constructor(props: Omit<CashBackByRateQuantity, "execute">) {
+    Object.assign(this, props);
+  }
 
   // conditions
-  const now = moment.utc();
-  if (now.isBetween(this.startDate, this.endDate)) {
-    if (this.stores.includes(cart.store))
-      if (!cart.flags.includes("service"))
-        cart.products.map((product) => {
-          if (product.quantity >= this.minQuantity)
-            cart.discount = this.discountByPercentage;
-          return cart;
-        });
-    return cart;
+  execute(cart: CartInterface) {
+    const now = moment.utc();
+    if (now.isBetween(this.startDate, this.endDate)) {
+      if (this.stores.includes(cart.store))
+        if (!cart.flags.includes("service"))
+          cart.products.map((product) => {
+            if (product.quantity >= this.minQuantity)
+              cart.discount = this.discountByPercentage;
+            return cart;
+          });
+      return cart;
+    }
   }
 }
 

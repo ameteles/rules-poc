@@ -1,5 +1,19 @@
 [
   {
+    "priority": 1,
+    "type": "CASHBACK_BY_RATE_QUANTITY",
+    "params": {
+      "stores": ["001"],
+      "departmentCodes": [],
+      "productEans": [],
+      "externalCodes": [],
+      "startDate": "2021-03-01",
+      "endDate": "2021-03-30",
+      "minQuantity": 5,
+      "discountByPercentage": 0.1
+    }
+  },
+  {
     "priority":2,
     "type":"DISCOUNT_PERCENTAGE_BY_AME_PAY",
     "params":{

@@ -1,8 +1,8 @@
 import RuleService from "./UseCases/Rules";
 import { CartInterface, PromotionInterface } from "./Interfaces/IRules";
 import Enuns from "./Enuns/PromotionEnum";
-// import promotions from "./promotions.json";
-// import barCodeReadCart from "./Fake/AmePayment/BarCodeReadCart";
+import promotions from "./promotions.json";
+import barCodeReadCart from "./Fake/AmePayment/BarCodeReadCart";
 class Promotions {
   private ruleService = new RuleService();
 
@@ -34,11 +34,11 @@ class Promotions {
 }
 //escolhe a melhor promoção para o determinado carrinho example
 
-// const promotion = new Promotions();
+const promotion = new Promotions();
 
 //remover caso use como package
-// promotion.loadPromotions(promotions);
+promotion.loadPromotions(promotions);
 
-// console.log(promotion.applyPromotions(barCodeReadCart));
+console.log(promotion.applyPromotions(barCodeReadCart));
 
 export { Promotions };
