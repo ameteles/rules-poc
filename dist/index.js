@@ -6,8 +6,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Promotions = void 0;
 const Rules_1 = __importDefault(require("./UseCases/Rules"));
 const PromotionEnum_1 = __importDefault(require("./Enuns/PromotionEnum"));
-const promotions_json_1 = __importDefault(require("./promotions.json"));
-const BarCodeReadCart_1 = __importDefault(require("./Fake/AmePayment/BarCodeReadCart"));
 class Promotions {
     constructor() {
         this.ruleService = new Rules_1.default();
@@ -29,7 +27,4 @@ class Promotions {
     }
 }
 exports.Promotions = Promotions;
-const promotion = new Promotions();
-promotion.loadPromotions(promotions_json_1.default);
-console.log(promotion.applyPromotions(BarCodeReadCart_1.default));
 //# sourceMappingURL=index.js.map

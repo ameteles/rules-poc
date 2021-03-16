@@ -15,6 +15,12 @@ export interface ProductInfoInterface {
 export interface ProductInterface {
   quantity: number;
   discountArray: DiscoutArrayInterface[];
+  cashback: number;
+  cashbackArray: any[];
+  cashbackInfo: {
+    burnt: { quantity: number; cashback: number };
+    modality: { quantity: number; cashback: number };
+  };
   product: ProductInfoInterface;
   price: number;
   [key: string]: any;
@@ -38,6 +44,7 @@ export interface CartInterface {
   discount: number;
   total: number;
   charges: number | string;
+  totalCashbackAmount: number;
   [key: string]: any;
 }
 

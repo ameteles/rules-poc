@@ -15,8 +15,17 @@ class CashBackByRateQuantity {
             if (this.stores.includes(cart.store))
                 if (!cart.flags.includes("service"))
                     cart.products.map((product) => {
-                        if (product.quantity >= this.minQuantity)
-                            cart.discount = this.discountByPercentage;
+                        if (this.productEans.includes(product.product.ean)) {
+                            const cashback = Number((product.price *
+                                product.quantity *
+                                this.discountByPercentage).toFixed(2));
+                            product.cashback = cashback;
+                            product.cashbackInfo.burnt.cashback = 0;
+                            product.cashbackInfo.burnt.quantity = 0;
+                            product.cashbackInfo.modality.cashback = this.discountByPercentage;
+                            product.cashbackInfo.modality.quantity = product.quantity;
+                            cart.totalCashbackAmount += cashback;
+                        }
                         return cart;
                     });
             return cart;
