@@ -22,7 +22,10 @@ class CashBackByRateQuantity implements ClassRuleInterface {
       if (this.stores.includes(cart.store))
         if (!cart.flags.includes("service"))
           cart.products.map((product) => {
-            if (this.productEans.includes(product.product.ean)) {
+            if (
+              this.productEans.includes(product.product.ean) &&
+              product.quantity >= this.minQuantity
+            ) {
               const cashback = Number(
                 (
                   product.price *

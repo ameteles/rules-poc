@@ -1,9 +1,9 @@
 import RuleService from "./UseCases/Rules";
 import { CartInterface, PromotionInterface } from "./Interfaces/IRules";
 import Enuns from "./Enuns/PromotionEnum";
-// import promotions from "./promotions.json";
+import promotions from "./promotions.json";
 // import barCodeReadCart from "./Fake/AmePayment/BarCodeReadCart";
-// import first from "./Fake/CashBackByQuantity/first";
+import first from "./Fake/CashBackByQuantity/first";
 class Promotions {
   private ruleService = new RuleService();
 
@@ -33,7 +33,6 @@ class Promotions {
     );
   };
 }
-//escolhe a melhor promoção para o determinado carrinho example
 
 // const promotion = new Promotions();
 
